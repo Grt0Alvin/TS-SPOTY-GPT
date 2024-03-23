@@ -16,7 +16,7 @@ The integration will allow users to interact with ChatGPT through text messages 
 Clone the project with the command:
 
 ```bash
-  git clone https://github.com/victorharry/zap-gpt.git
+  git clone https://https://github.com/Grt0Alvin/TS-SPOTY-GPT
 ```
 
 go to the .env.example file and rename it to .env, and change the values ​​necessary for it to work. Now install the project dependencies with the command:
