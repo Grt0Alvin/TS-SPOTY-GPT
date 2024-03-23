@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator {
+            background-color: #343a40;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .calculator-screen {
+            width: 100%;
+            height: 60px;
+            background-color: #212529;
+            color: #fff;
+            text-align: right;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .calculator-keys {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .calculator-keys button {
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #adb5bd;
+            color: #212529;
+            cursor: pointer;
+        }
+
+        .calculator-keys button:hover {
+            background-color: #868e96;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="calculator-screen" id="screen">0</div>
+        <div class="calculator-keys">
+            <button onclick="clearScreen()">C</button>
+            <button onclick="appendNumber(7)">7</button>
+            <button onclick="appendNumber(8)">8</button>
+            <button onclick="appendNumber(9)">9</button>
+            <button onclick="appendNumber(4)">4</button>
+            <button onclick="appendNumber(5)">5</button>
+            <button onclick="appendNumber(6)">6</button>
+            <button onclick="appendNumber(1)">1</button>
+            <button onclick="appendNumber(2)">2</button>
+            <button onclick="appendNumber(3)">3</button>
+            <button onclick="appendNumber(0)">0</button>
+            <button onclick="appendOperator('+')">+</button>
+            <button onclick="appendOperator('-')">-</button>
+            <button onclick="appendOperator('*')">*</button>
+            <button onclick="appendOperator('/')">/</button>
+            <button onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script>
+        let currentInput = '0';
+        let operator = '';
+        let firstOperand = '';
+
+        function clearScreen() {
+            currentInput = '0';
+            operator = '';
+            firstOperand = '';
+            updateScreen();
+        }
+
+        function appendNumber(number) {
+            if (currentInput === '0') {
+                currentInput = '';
+            }
+            currentInput += number;
+            updateScreen();
+        }
+
+        function appendOperator(op) {
+            operator = op;
+            firstOperand = currentInput;
+            currentInput = '0';
+            updateScreen();
+        }
+
+        function calculate() {
+            let result = 0;
+            switch (operator) {
+                case '+':
+                    result = parseFloat(firstOperand) + parseFloat(currentInput);
+                    break;
+                case '-':
+                    result = parseFloat(firstOperand) - parseFloat(currentInput);
+                    break;
+                case '*':
+                    result = parseFloat(firstOperand) * parseFloat(currentInput);
+                    break;
+                case '/':
+                    result = parseFloat(firstOperand) / parseFloat(currentInput);
+                    break;
+                default:
+                    result = currentInput;
+            }
+            currentInput = result.toString();
+            operator = '';
+            firstOperand = '';
+            updateScreen();
+        }
+
+        function updateScreen() {
+            document.getElementById('screen').innerText = currentInput;
+        }
+    </script>
+</body>
+</html>
