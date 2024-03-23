@@ -1,36 +1,32 @@
 
-# zap-gpt
+# T$-SPOTY-GPT
 
-A integração permitirá que usuários interajam com o ChatGPT através de mensagens de texto no WhatsApp, fornecendo respostas automatizadas baseadas em suas perguntas e comandos.
-
-Neste artigo voce consegue ver como criar do 0 -> [Tab News](https://www.tabnews.com.br/victorharry/guia-completo-de-como-integrar-o-chat-gpt-com-whatsapp)
+The integration will allow users to interact with ChatGPT through text messages on WhatsApp, providing automated responses based on their questions and commands. In this article you can see how to create from  0 -> [Tab News](https://www.tabnews.com.br/victorharry/guia-completo-de-como-integrar-o-chat-gpt-com-whatsapp)
 
 ## Demo
 
-![Imagem gerada no Midjourney](https://miro.medium.com/max/720/1*0K0tAo1ujQoFa9NG3ClIdw.webp)
+![Image by Telegraph](https://telegra.ph/file/bbbb927e741241c793143.jpg)
 
-## Tecnologias
+## Technologies
 
 - [OpenIA](https://beta.openai.com/)
 - [whatsapp-web.js](https://wwebjs.dev/)
 
-## Rodar o projeto
+## 
 
-Clone este projeto com o comando:
+Clone the project with the command:
 
 ```bash
   git clone https://github.com/victorharry/zap-gpt.git
 ```
 
-Vá até o arquivo .env.example e renomeie-o para .env, e altere os valores necessários para seu funcionamento.
-
-Instale agora as dependencias do projeto com o comando:
+go to the .env.example file and rename it to .env, and change the values ​​necessary for it to work. Now install the project dependencies with the command:
 
 ```bash
   npm install
 ```
 
-Por fim rode o comando abaixo para iniciar o projeto e leia o QR Code com o seu Whasapp para se conectar com o serviço.
+Finally, run the command below to start the project and read the QR Code with your Whasapp to connect with the service..
 
 ```bash
   npm start
