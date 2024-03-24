@@ -14,3 +14,7 @@
   ],
   "author": "Alvin Pieterson",
   "license": "UNLICENSED"
+
+"publishConfig": {
+  "@Grt0Alvin:registry": "https://npm.pkg.github.com"
+}
